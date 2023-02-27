@@ -1,0 +1,72 @@
+  coverage-dependencies:
+    O(111): {model: Polynomial,
+            enthalpy-1st-order: 0.16063238,
+            enthalpy-2nd-order: 2.40956365,
+            enthalpy-unit: eV
+           }
+  coverage-dependencies:
+    CO(111): {model: Polynomial,
+            enthalpy-1st-order: -0.48732937,
+            enthalpy-2nd-order: 2.14911651,
+            enthalpy-unit: eV
+           }
+  coverage-dependencies:
+    C(111): {model: Polynomial,
+            enthalpy-1st-order: 0.33924174,
+            enthalpy-2nd-order: 1.45140887,
+            enthalpy-unit: eV
+           }
+  coverage-dependencies:
+    O(100): {model: Polynomial,
+            enthalpy-1st-order: 0.16063238,
+            enthalpy-2nd-order: 2.40956365,
+            enthalpy-unit: eV
+           }
+  coverage-dependencies:
+    CO(100): {model: Polynomial,
+            enthalpy-1st-order: -0.48732937,
+            enthalpy-2nd-order: 2.14911651,
+            enthalpy-unit: eV
+           }
+  coverage-dependencies:
+    C(100): {model: Polynomial,
+            enthalpy-1st-order: 0.33924174,
+            enthalpy-2nd-order: 1.45140887,
+            enthalpy-unit: eV
+           }
+  coverage-dependencies:
+    O(211): {model: Polynomial,
+            enthalpy-1st-order: 1.21673585,
+            enthalpy-2nd-order: 0.02745549,
+            enthalpy-unit: eV
+           }
+  coverage-dependencies:
+    CO(211): {model: Polynomial,
+            enthalpy-1st-order: -0.31804162,
+            enthalpy-2nd-order: 1.41287108,
+            enthalpy-unit: eV
+           }
+  coverage-dependencies:
+    C(211): {model: Polynomial,
+            enthalpy-1st-order: 0.49469333,
+            enthalpy-2nd-order: 2.14873445,
+            enthalpy-unit: eV
+           }
+  coverage-dependencies:
+    O(110): {model: Polynomial,
+            enthalpy-1st-order: 1.21673585,
+            enthalpy-2nd-order: 0.02745549,
+            enthalpy-unit: eV
+           }
+  coverage-dependencies:
+    CO(110): {model: Polynomial,
+            enthalpy-1st-order: -0.31804162,
+            enthalpy-2nd-order: 1.41287108,
+            enthalpy-unit: eV
+           }
+  coverage-dependencies:
+    C(110): {model: Polynomial,
+            enthalpy-1st-order: 0.49469333,
+            enthalpy-2nd-order: 2.14873445,
+            enthalpy-unit: eV
+           }
