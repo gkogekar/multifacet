@@ -577,7 +577,7 @@ edge23-reactions:
   rate-constant: {A: 1e+12, b: 0, Ea: 13}
 - equation: OC(100) + site(211) <=> site(100) + OC(211)  # Reaction 3 (Reversed reaction)
   id: edge23
-  rate-constant: {A: 1e+12, b: 0, Ea: 3}
+  rate-constant: {A: 1e+12, b: 0, Ea: 10}
 - equation: C(211) + site(100) <=> site(211) + C(100)  # Reaction 4
   id: edge23
   rate-constant: {A: 1e+12, b: 0, Ea: 196}
