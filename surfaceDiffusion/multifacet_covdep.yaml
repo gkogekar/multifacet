@@ -207,8 +207,8 @@ species:
       -2.7410401921836736e+04, -15.2489186]
   coverage-dependencies:
     O(111): {model: Polynomial,
-            enthalpy-1st-order: 0.16063238,
-            enthalpy-2nd-order: 2.40956365,
+            enthalpy-1st-order: 0.38867803,
+            enthalpy-2nd-order: 1.2260826,
             enthalpy-unit: eV
            }
 - name: OC(111)
@@ -223,8 +223,8 @@ species:
       -3.070031697850165e+04, -26.629635]
   coverage-dependencies:
     OC(111): {model: Polynomial,
-            enthalpy-1st-order: -0.48732937,
-            enthalpy-2nd-order: 2.14911651,
+            enthalpy-1st-order:-0.95599009,
+            enthalpy-2nd-order: 2.6371953,
             enthalpy-unit: eV
            }
 - name: C(111)
@@ -273,8 +273,8 @@ species:
       -3.822792157810228e+04, -14.9632324]
   coverage-dependencies:
     O(211): {model: Polynomial,
-            enthalpy-1st-order: 1.21673585,
-            enthalpy-2nd-order: 0.02745549,
+            enthalpy-1st-order: 0.68278903,
+            enthalpy-2nd-order: 0.94226941,
             enthalpy-unit: eV
            }
 - name: OC(211)
@@ -289,8 +289,8 @@ species:
       -3.1887738412062085e+04, -25.699079]
   coverage-dependencies:
     OC(211): {model: Polynomial,
-            enthalpy-1st-order: -0.31804162,
-            enthalpy-2nd-order: 1.41287108,
+            enthalpy-1st-order:-0.41158878,
+            enthalpy-2nd-order: 1.619729,
             enthalpy-unit: eV
            }
 - name: C(211)
@@ -339,8 +339,8 @@ species:
       -3.400599113393622e+04, -14.8634903]
   coverage-dependencies:
     O(100): {model: Polynomial,
-            enthalpy-1st-order: 0.16063238,
-            enthalpy-2nd-order: 2.40956365,
+            enthalpy-1st-order:0.07538997,
+            enthalpy-2nd-order: 1.72805287,
             enthalpy-unit: eV
            }
 - name: OC(100)
@@ -355,8 +355,8 @@ species:
       -2.9756265139629315e+04, -26.5015256]
   coverage-dependencies:
     OC(100): {model: Polynomial,
-            enthalpy-1st-order: -0.48732937,
-            enthalpy-2nd-order: 2.14911651,
+            enthalpy-1st-order: -0.58599734,
+            enthalpy-2nd-order: 1.4450527,
             enthalpy-unit: eV
            }
 - name: C(100)
@@ -405,8 +405,8 @@ species:
       -2.9512388132787582e+04, -14.4600874]
   coverage-dependencies:
     O(110): {model: Polynomial,
-            enthalpy-1st-order: 1.21673585,
-            enthalpy-2nd-order: 0.02745549,
+            enthalpy-1st-order: -0.06783788,
+            enthalpy-2nd-order: 0.82834928,
             enthalpy-unit: eV
            }
 - name: OC(110)
@@ -421,8 +421,8 @@ species:
       -3.0930665126379285e+04, -24.2213882]
   coverage-dependencies:
     OC(110): {model: Polynomial,
-            enthalpy-1st-order: -0.31804162,
-            enthalpy-2nd-order: 1.41287108,
+            enthalpy-1st-order: 0.03120457,
+            enthalpy-2nd-order: 0.16819107,
             enthalpy-unit: eV
            }
 - name: C(110)
