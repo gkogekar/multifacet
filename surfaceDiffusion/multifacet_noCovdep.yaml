@@ -76,6 +76,7 @@ phases:
   reference-state-coverage: 0.11
   adjacent-phases: [gas]
   site-density: 1.94e-09
+  
 - name: edge12
   thermo: edge
   adjacent-phases: [gas, surface1, surface2]
@@ -87,7 +88,7 @@ phases:
     T: 300.0
     P: 1.01325e+05
     coverages: {(tpb): 1.0}
-  site-density: 1.94e-9  
+  site-density: 3.36e-09  
 - name: edge23
   thermo: edge
   adjacent-phases: [gas, surface2, surface3]
@@ -99,8 +100,32 @@ phases:
     T: 300.0
     P: 1.01325e+05
     coverages: {(tpb): 1.0}
-  site-density: 1.94e-9
-
+  site-density: 3.36e-09
+- name: edge14
+  thermo: edge
+  adjacent-phases: [gas, surface1, surface4]
+  elements: [H, D, T, C, Ci, O, Oi, N, Ne, Ar, He, Si, S, Cl, X]
+  species: [(tpb)]
+  kinetics: edge
+  reactions: [edge14-reactions]
+  state:
+    T: 300.0
+    P: 1.01325e+05
+    coverages: {(tpb): 1.0}
+  site-density: 1.94e-09
+- name: edge34
+  thermo: edge
+  adjacent-phases: [gas, surface3, surface4]
+  elements: [H, D, T, C, Ci, O, Oi, N, Ne, Ar, He, Si, S, Cl, X]
+  species: [(tpb)]
+  kinetics: edge
+  reactions: [edge34-reactions]
+  state:
+    T: 300.0
+    P: 1.01325e+05
+    coverages: {(tpb): 1.0}
+  site-density: 1.94e-09
+  
 species:
 - name: (tpb)
   composition: {}
@@ -206,11 +231,11 @@ species:
     - [2.90105106, -3.44590435e-04, 6.54399143e-07, -3.72524694e-10, 7.01680708e-14,
       -2.7410401921836736e+04, -15.2489186]
   coverage-dependencies:
-    O(111): {model: Polynomial,
-            enthalpy-1st-order: 0.38867803,
-            enthalpy-2nd-order: 1.2260826,
-            enthalpy-unit: eV
-           }
+    O(111): {model: polynomial,
+             units: {energy: kJ, quantity: mol},
+             enthalpy-coefficients: [37.5010866, 118.2984501, 0.0, 0.0],
+             entropy-coefficients: [-0.00234765, -0.00199994, 0.0, 0.0]
+            }
 - name: OC(111)
   composition: {C: 1, O: 1}
   thermo:
@@ -222,10 +247,10 @@ species:
     - [5.53635466, -1.49964996e-03, 2.74741657e-06, -1.51690626e-09, 2.79160302e-13,
       -3.070031697850165e+04, -26.629635]
   coverage-dependencies:
-    OC(111): {model: Polynomial,
-            enthalpy-1st-order:-0.95599009,
-            enthalpy-2nd-order: 2.6371953,
-            enthalpy-unit: eV
+    OC(111): {model: polynomial,
+             units: {energy: kJ, quantity: mol},
+             enthalpy-coefficients: [-92.24070759, 254.4525324, 0.0, 0.0],
+             entropy-coefficients: [0.00631767, -0.03443234, 0.0, 0.0]
            }
 - name: C(111)
   composition: {C: 1}
@@ -237,12 +262,6 @@ species:
       1.454787524333509e+04, 5.18140244]
     - [2.84498222, -5.64156015e-04, 1.06350659e-06, -6.03815152e-10, 1.13558039e-13,
       1.370991104333509e+04, -15.5434266]
-  coverage-dependencies:
-    C(111): {model: Polynomial,
-            enthalpy-1st-order: 0.33924174,
-            enthalpy-2nd-order: 1.45140887,
-            enthalpy-unit: eV
-           }
 - name: CO2(111)
   composition: {C: 1, O: 2}
   thermo:
@@ -272,11 +291,11 @@ species:
     - [2.91333272, -3.01652114e-04, 5.72894189e-07, -3.2613128e-10, 6.14297693e-14,
       -3.822792157810228e+04, -14.9632324]
   coverage-dependencies:
-    O(211): {model: Polynomial,
-            enthalpy-1st-order: 0.68278903,
-            enthalpy-2nd-order: 0.94226941,
-            enthalpy-unit: eV
-           }
+    O(211): {model: polynomial,
+             units: {energy: kJ, quantity: mol},
+             enthalpy-coefficients: [65.87658891, 90.91879811, 0.0, 0.0],
+             entropy-coefficients: [-0.00857476, -0.00796739, 0.0, 0.0]
+            }
 - name: OC(211)
   composition: {C: 1, O: 1}
   thermo:
@@ -288,10 +307,10 @@ species:
     - [5.50076667, -1.57317904e-03, 2.87668162e-06, -1.58344352e-09, 2.90678454e-13,
       -3.1887738412062085e+04, -25.699079]
   coverage-dependencies:
-    OC(211): {model: Polynomial,
-            enthalpy-1st-order:-0.41158878,
-            enthalpy-2nd-order: 1.619729,
-            enthalpy-unit: eV
+    OC(211): {model: polynomial,
+             units: {energy: kJ, quantity: mol},
+             enthalpy-coefficients: [-39.71121914, 156.2795182, 0.0, 0.0],
+             entropy-coefficients: [0.01677211, -0.04974614, 0.0, 0.0]
            }
 - name: C(211)
   composition: {C: 1}
@@ -302,13 +321,7 @@ species:
     - [-1.25734407, 0.0165469423, -2.75545191e-05, 2.16984928e-08, -6.59943974e-12,
       1.1762501906040196e+04, 4.35812434]
     - [2.82654807, -6.52603353e-04, 1.22240815e-06, -6.92179219e-10, 1.29958507e-13,
-      1.0937861846040196e+04, -15.2601134]
-  coverage-dependencies:
-    C(211): {model: Polynomial,
-            enthalpy-1st-order: 0.49469333,
-            enthalpy-2nd-order: 2.14873445,
-            enthalpy-unit: eV
-           }    
+      1.0937861846040196e+04, -15.2601134]  
 - name: CO2(211)
   composition: {C: 1, O: 2}
   thermo:
@@ -338,11 +351,11 @@ species:
     - [2.93674276, -2.11596344e-04, 4.04525698e-07, -2.30803441e-10, 4.35296172e-14,
       -3.400599113393622e+04, -14.8634903]
   coverage-dependencies:
-    O(100): {model: Polynomial,
-            enthalpy-1st-order:0.07538997,
-            enthalpy-2nd-order: 1.72805287,
-            enthalpy-unit: eV
-           }
+    O(100): {model: polynomial,
+             units: {energy: kJ, quantity: mol},
+             enthalpy-coefficients: [7.2710526, 166.7365869, 0.0, 0.0],
+             entropy-coefficients: [-0.00260591, 0.00111535, 0.0, 0.0]
+            }
 - name: OC(100)
   composition: {C: 1, O: 1}
   thermo:
@@ -354,10 +367,10 @@ species:
     - [5.59807438, -1.3527838e-03, 2.48251084e-06, -1.37572976e-09, 2.53964009e-13,
       -2.9756265139629315e+04, -26.5015256]
   coverage-dependencies:
-    OC(100): {model: Polynomial,
-            enthalpy-1st-order: -0.58599734,
-            enthalpy-2nd-order: 1.4450527,
-            enthalpy-unit: eV
+    OC(100): {model: polynomial,
+             units: {energy: kJ, quantity: mol},
+             enthalpy-coefficients: [-56.54175944, 139.4292111, 0.0, 0.0],
+             entropy-coefficients: [0.00643302, -0.02696365, 0.0, 0.0]
            }
 - name: C(100)
   composition: {C: 1}
@@ -369,12 +382,6 @@ species:
       3160.8999543069017, 4.33140289]
     - [2.82845012, -6.44297444e-04, 1.20727227e-06, -6.83711611e-10, 1.28380944e-13,
       2338.964034306902, -15.2705756]
-  coverage-dependencies:
-    C(100): {model: Polynomial,
-            enthalpy-1st-order: 0.33924174,
-            enthalpy-2nd-order: 1.45140887,
-            enthalpy-unit: eV
-           } 
 - name: CO2(100)
   composition: {C: 1, O: 2}
   thermo:
@@ -404,11 +411,11 @@ species:
     - [2.90337972, -3.4656432e-04, 6.54885675e-07, -3.72138089e-10, 7.00224179e-14,
       -2.9512388132787582e+04, -14.4600874]
   coverage-dependencies:
-    O(110): {model: Polynomial,
-            enthalpy-1st-order: -0.06783788,
-            enthalpy-2nd-order: 0.82834928,
-            enthalpy-unit: eV
-           }
+    O(110): {model: polynomial,
+             units: {energy: kJ, quantity: mol},
+             enthalpy-coefficients: [-6.5447695, 79.92176853, 0.0, 0.0],
+             entropy-coefficients: [0.004497, -0.00904581, 0.0, 0.0]
+            }
 - name: OC(110)
   composition: {C: 1, O: 1}
   thermo:
@@ -420,10 +427,10 @@ species:
     - [5.50817819, -1.56170089e-03, 2.85750031e-06, -1.57439308e-09, 2.892436e-13,
       -3.0930665126379285e+04, -24.2213882]
   coverage-dependencies:
-    OC(110): {model: Polynomial,
-            enthalpy-1st-order: 0.03120457,
-            enthalpy-2nd-order: 0.16819107,
-            enthalpy-unit: eV
+    OC(110): {model: polynomial,
+             units: {energy: kJ, quantity: mol},
+             enthalpy-coefficients: [3.01449306, 16.22351312, 0.0, 0.0],
+             entropy-coefficients: [-0.01700159, -0.00730738, 0.0, 0.0]
            }
 - name: C(110)
   composition: {C: 1}
@@ -435,12 +442,6 @@ species:
       9716.672506408295, 2.03019198]
     - [2.87941509, -4.28521538e-04, 8.11047842e-07, -4.61148292e-10, 8.68010233e-14,
       9025.943236408295, -15.3817189]
-  coverage-dependencies:
-    C(110): {model: Polynomial,
-            enthalpy-1st-order: 0.49469333,
-            enthalpy-2nd-order: 2.14873445,
-            enthalpy-unit: eV
-           }
 - name: CO2(110)
   composition: {C: 1, O: 2}
   thermo:
@@ -520,26 +521,57 @@ surface4-reactions:
 - equation: OC(110) + site(110) <=> C(110) + O(110)  # Reaction 20
   rate-constant: {A: 5.893e+20, b: 0.0, Ea: 249.748} #reverse
   id: Ni(110)
-  
+ 
+# The unit of rate coefficient (k = 1e12) is 1/s from literature.
+# Divide k by gamma -> 
+# For edges with (211), k = 1e12/(3.36e-9) unit: cm^2/mol/s
+# k = 2.976e20 cm^2/mol/s = 2.976e19 m^2/kmol/s
+# For edges with (110), k = 1e12/(1.94e-9) unit: cm^2/mol/s
+# k = 5.15e20 cm^2/mol/s = 5.15e19 m^2/kmol/s
+
 edge12-reactions:
 - equation: O(111) + site(211) <=> site(111) + O(211)  # Reaction 1
   id: edge12
-  rate-constant: {A: 1e+12, b: 0, Ea: 48}
+  rate-constant: {A: 2.976e20, b: 0, Ea: 48}
 - equation: OC(111) + site(211) <=> site(111) + OC(211)  # Reaction 2
   id: edge12
-  rate-constant: {A: 1e+12, b: 0, Ea: 10}
+  rate-constant: {A: 2.976e20, b: 0, Ea: 10}
 - equation: C(111) + site(211) <=> site(111) + C(211)  # Reaction 3
   id: edge12
-  rate-constant: {A: 1e+12, b: 0, Ea: 50}
+  rate-constant: {A: 2.976e20, b: 0, Ea: 50}
 
 edge23-reactions:
-- equation: O(211) + site(100) <=> site(211) + O(100)  # Reaction 1
+- equation: O(100) + site(211) <=> site(100) + O(211)  # Reaction 1 (Reversed reaction - July 7, 2023)
   id: edge23
-  rate-constant: {A: 1e+12, b: 0, Ea: 61}
+  rate-constant: {A: 2.256e20, b: 0, Ea: 26}
 - equation: OC(100) + site(211) <=> site(100) + OC(211)  # Reaction 2 (Reversed reaction)
   id: edge23
-  rate-constant: {A: 1e+12, b: 0, Ea: 10}
+  rate-constant: {A: 2.976e20, b: 0, Ea: 10}
+# - equation: OC(211) + site(100) <=> site(211) + OC(100)  # Reaction 2 (Reversed reaction)
+#   id: edge23
+#   rate-constant: {A: 1e+12, b: 0, Ea: 3}
 - equation: C(211) + site(100) <=> site(211) + C(100)  # Reaction 3
   id: edge23
-  rate-constant: {A: 1e+12, b: 0, Ea: 196}
- 
+  rate-constant: {A: 2.976e20, b: 0, Ea: 196}
+  
+edge14-reactions:
+- equation: O(111) + site(110) <=> site(111) + O(110)  # Reaction 1
+  id: edge12
+  rate-constant: {A: 5.15e20, b: 0, Ea: 48}
+- equation: OC(111) + site(110) <=> site(111) + OC(110)  # Reaction 2
+  id: edge12
+  rate-constant: {A: 5.15e20, b: 0, Ea: 10}
+- equation: C(111) + site(110) <=> site(111) + C(110)  # Reaction 3
+  id: edge12
+  rate-constant: {A: 5.15e20, b: 0, Ea: 50}
+
+edge34-reactions:
+- equation: O(110) + site(100) <=> site(110) + O(100)  # Reaction 1
+  id: edge23
+  rate-constant: {A: 5.15e20, b: 0, Ea: 61}
+- equation: OC(100) + site(110) <=> site(100) + OC(110)  # Reaction 2 (Reversed reaction)
+  id: edge23
+  rate-constant: {A: 5.15e20, b: 0, Ea: 10}
+- equation: C(110) + site(100) <=> site(110) + C(100)  # Reaction 3
+  id: edge23
+  rate-constant: {A: 5.15e20, b: 0, Ea: 196} 
